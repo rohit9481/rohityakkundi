@@ -1,76 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>My Projects | Rohit Yakkundi</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Rohit Yakkundi – Python, ML, Web Dev and more.">
+  <title>My Projects | Rohit Yakkundi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <nav>
-        <div class="menu">
-            <div class="logo">
-                <a href="#">ℜ𝔜</a>
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Resume.html">Resume</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-        </div>
-    </nav>
-    <section class="projects">
-        <br>
-        <br>
-        <div class="p">
-        <h1>My Projects</h1>
-        </div>
-        <br>
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="projects/T4.png" alt="Project 1">
-                <h2>Theft Alert Detection System</h2>
-                <p>Incorporating Python, this project, including the UI, utilizes a webcam to detect stolen objects, sending alerts via email and SMS. An added feature is a phone call to the user, prompting immediate attention.	</p>
-                <a href="project1.html" class="view-btn">View Project</a>
-            </div>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="projects/MH0.png" alt="Project 2">
-                <h2>MentalHealth.com   Let's Talk,Listen,and Heal Together</h2>
-                <p>This website tell about: Discover a sanctuary of mental well-being and support. Our website offers a safe space to explore resources, find guidance, and foster resilience for a healthier, happier mind.</p>
-                <a href="project2.html" class="view-btn">View Project</a>
-            </div>
+<!-- ── Particle Canvas ── -->
+<canvas id="particleCanvas"></canvas>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="projects/C0.png" alt="Project 3">
-                <h2>Car Parking System   Using OpenCV</h2>
-                <p>This project detects empty parking spaces, allowing vehicles to park efficiently. By optimizing space utilization, it helps reduce congestion, save time, and improve overall parking management. With smart detection technology, it ensures a hassle-free parking experience.</p>                
-                <a href="project3.html" class="view-btn">View Project</a>
-            </div>
-            <!-- Project4 -->
-            <div class="project-card">
-                <img src="projects/G0.png" alt="Project 4">
-                <h2>Gamified Energy Monitoring</h2>
-                <p>This site monitors and alerts if any un usual Energy consumption is detected</p>                 
-                <a href="project4.html" class="view-btn">View Project</a>
-            </div>
-            <!-- Project5 -->
-            <div class="project-card">
-                <img src="projects/SL1.png" alt="Project 5">
-                <h2>ServiceLinker</h2>
-                <p>App which provides all household services to the user. User can book service from service provider.</p>
-                <a href="project5.html" class="view-btn">View Project</a>
-            </div>
-            <div class="project-card">
-                <img src="projects/FRA.png" alt="Project 6">
-                <h2>Financial Risk Analisys</h2>
-                <p>Website where u can check ur retains on investment and compare stocks before investment </p>
-                <a href="project6.html" class="view-btn">View Project</a>
-            </div>
-        </div>
-    </section>
+<!-- ── Navigation ── -->
+<nav id="navbar">
+  <div class="menu">
+    <div class="logo"><a href="index.html">ℜ𝔜</a></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Projects Section ── -->
+<section class="projects">
+  <div class="section-label">What I've Built</div>
+  <h1>My Projects</h1>
+  <p class="projects-subtitle">A collection of real-world solutions built with passion and curiosity.</p>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card reveal reveal-delay-1">
+      <img src="projects/T4.png" alt="Theft Alert Detection System">
+      <div class="project-card-body">
+        <h2>Theft Alert Detection System</h2>
+        <p>Uses a webcam to detect stolen objects, sending alerts via email, SMS and phone call using Python & CV.</p>
+        <a href="project1.html" class="view-btn">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card reveal reveal-delay-2">
+      <img src="projects/MH0.png" alt="MentalHealth.com">
+      <div class="project-card-body">
+        <h2>MentalHealth.com</h2>
+        <p>A sanctuary for mental well-being. Explore resources, find guidance, and foster resilience for a healthier mind.</p>
+        <a href="project2.html" class="view-btn">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card reveal reveal-delay-3">
+      <img src="projects/C0.png" alt="Car Parking System">
+      <div class="project-card-body">
+        <h2>Car Parking System — OpenCV</h2>
+        <p>Detects empty parking spaces using computer vision to optimize space utilization and reduce congestion.</p>
+        <a href="project3.html" class="view-btn">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card reveal reveal-delay-1">
+      <img src="projects/G0.png" alt="Gamified Energy Monitoring">
+      <div class="project-card-body">
+        <h2>Gamified Energy Monitoring</h2>
+        <p>Monitors and alerts on unusual energy consumption patterns through an engaging gamified interface.</p>
+        <a href="project4.html" class="view-btn">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card reveal reveal-delay-2">
+      <img src="projects/SL1.png" alt="ServiceLinker">
+      <div class="project-card-body">
+        <h2>ServiceLinker</h2>
+        <p>An app that connects users with household service providers for easy booking and management.</p>
+        <a href="project5.html" class="view-btn">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="project-card reveal reveal-delay-3">
+      <img src="projects/FRA.png" alt="Financial Risk Analysis">
+      <div class="project-card-body">
+        <h2>Financial Risk Analysis</h2>
+        <p>Check investment returns and compare stocks before investing with interactive analytics dashboards.</p>
+        <a href="project6.html" class="view-btn">View Project →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>© 2025 Rohit Yakkundi &nbsp;·&nbsp; Coder &nbsp;·&nbsp; Learner &nbsp;·&nbsp; Innovator</p>
+  <p>"Code is like humor. When you have to explain it, it's bad." – Cory House</p>
+</footer>
+
+<script>
+  /* Nav on scroll */
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* Scroll reveal */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* Particles */
+  (function () {
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    function Particle() {
+      this.x = Math.random() * W; this.y = Math.random() * H;
+      this.r = Math.random() * 1.2 + 0.3;
+      this.dx = (Math.random() - 0.5) * 0.35; this.dy = (Math.random() - 0.5) * 0.35;
+      this.alpha = Math.random() * 0.4 + 0.15;
+      this.col = Math.random() > 0.5 ? '124,58,237' : '6,182,212';
+    }
+    for (let i = 0; i < 70; i++) particles.push(new Particle());
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => {
+        p.x += p.dx; p.y += p.dy;
+        if (p.x < 0 || p.x > W) p.dx *= -1;
+        if (p.y < 0 || p.y > H) p.dy *= -1;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.col},${p.alpha})`; ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+</script>
+
 </body>
 </html>

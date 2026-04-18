@@ -1,34 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Me - Rohit Yakkundi</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .resume-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-        }
-        iframe {
-            border: none;
-            width: 72%;
-            height: 600px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume of Rohit Yakkundi – B.Tech CS at PESU.">
+  <title>Resume | Rohit Yakkundi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body>
-    <div class="resume-container">
-        <h3>Welcome to my Resume page! Here’s my Resume:</h3>
-        <p>If the resume is not visible, click below to open it:</p>
-        <p><a href="https://drive.google.com/file/d/1tTnbQNU82zcFoIqE1rFEVt1GWFi6TUJS/view?usp=sharing" target="_blank">Open the document directly</a> ⬇️</p>
+<body class="resume-page-body">
 
-        <!-- Embedded Resume -->
-        <iframe src="https://drive.google.com/file/d/1tTnbQNU82zcFoIqE1rFEVt1GWFi6TUJS/view"></iframe>
-    </div>
+<!-- ── Particle Canvas ── -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- ── Nav ── -->
+<nav id="navbar" class="resume-page-nav" style="position:fixed;padding:14px 28px;">
+  <div style="font-family:'Space Mono',monospace;font-size:26px;font-weight:700;background:linear-gradient(135deg,#7c3aed,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+    <a href="index.html" style="text-decoration:none;background:inherit;-webkit-background-clip:text;-webkit-text-fill-color:transparent;">ℜ𝔜</a>
+  </div>
+  <div style="display:flex;gap:10px;">
+    <a href="index.html" style="color:var(--text-muted);text-decoration:none;font-size:14px;padding:7px 14px;border-radius:8px;border:1px solid var(--border);transition:all .3s">Home</a>
+    <a href="projects.html" style="color:var(--text-muted);text-decoration:none;font-size:14px;padding:7px 14px;border-radius:8px;border:1px solid var(--border);transition:all .3s">Projects</a>
+  </div>
+</nav>
+
+<!-- ── Resume Content ── -->
+<div class="resume-container">
+  <h3>My Resume</h3>
+  <p>📄 If the embed isn't loading, <a href="https://drive.google.com/file/d/1_8Kl-nxuMfPuHwo16eRJI-D9bb3iV4hF/view?usp=sharing" target="_blank" rel="noopener">open it directly ↗</a></p>
+  <iframe src="https://drive.google.com/file/d/1_8Kl-nxuMfPuHwo16eRJI-D9bb3iV4hF/preview" allowfullscreen></iframe>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>© 2025 Rohit Yakkundi &nbsp;·&nbsp; Coder &nbsp;·&nbsp; Learner &nbsp;·&nbsp; Innovator</p>
+</footer>
+
+<script>
+  (function () {
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    function Particle() {
+      this.x = Math.random() * W; this.y = Math.random() * H;
+      this.r = Math.random() * 1.2 + 0.3;
+      this.dx = (Math.random() - 0.5) * 0.3; this.dy = (Math.random() - 0.5) * 0.3;
+      this.alpha = Math.random() * 0.35 + 0.1;
+      this.col = Math.random() > 0.5 ? '124,58,237' : '6,182,212';
+    }
+    for (let i = 0; i < 60; i++) particles.push(new Particle());
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => {
+        p.x += p.dx; p.y += p.dy;
+        if (p.x < 0 || p.x > W) p.dx *= -1;
+        if (p.y < 0 || p.y > H) p.dy *= -1;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.col},${p.alpha})`; ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+</script>
+
 </body>
 </html>
